@@ -1,0 +1,18 @@
+@(productForm: Form[Product])(implicit messages: MessagesProvider, flash: Flash, requestHeader: RequestHeader)
+@import helper._
+
+@main("Edit Product") {
+  <h2>@messages.messages("products.form")</h2>
+  @form(action = CSRF(routes.Products.save())) {
+    <fieldset>
+      <legend>
+        Product @messages.messages("products.new")
+      </legend>
+        @inputText(productForm("esn"))
+        @inputText(productForm("name"))
+        @textarea(productForm("description"))
+    </fieldset>
+    <p><input type="submit" class="btn primary"
+    value='@messages.messages("products.new.submit")'></p>
+  }
+}

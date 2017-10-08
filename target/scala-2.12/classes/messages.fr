@@ -1,0 +1,22 @@
+application.name = Catalogues de produits
+
+details = Product: 
+
+esn = ESN: 
+
+name = Nom: 
+
+description = Descriptif:
+
+products.form = Details de produit
+
+products.new = (Creation)
+
+products.new.command = Nouveau
+
+products.new.submit = Ajout
+
+products.new.success = Product ajouté
+
+validation.errors = Veuillez corriger les erreurs sur le formulaire.
+validation.esn.duplication = Un produit avec ce code EAN existe déjà.

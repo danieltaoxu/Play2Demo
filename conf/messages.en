@@ -1,0 +1,22 @@
+application.name = Product catalog
+
+details = Product: 
+
+esn = ESN: 
+
+name = Name: 
+
+description = Description: 
+
+products.form = Product details
+
+products.new = (Creation)
+
+products.new.command = New
+
+products.new.submit = Add
+
+products.new.success = Successfully added product 
+
+validation.errors = Please modify the errors in the form.
+validation.esn.duplication = A product with same ESN code exists.
