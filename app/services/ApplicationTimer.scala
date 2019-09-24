@@ -1,9 +1,12 @@
 package services
 
 import java.time.{Clock, Instant}
+
 import javax.inject._
+import org.slf4j.LoggerFactory
 import play.api.Logger
 import play.api.inject.ApplicationLifecycle
+
 import scala.concurrent.Future
 
 /**
@@ -25,7 +28,8 @@ class ApplicationTimer @Inject() (clock: Clock, appLifecycle: ApplicationLifecyc
 
   // This code is called when the application starts.
   private val start: Instant = clock.instant
-  Logger.info(s"ApplicationTimer demo: Starting application at $start.")
+  private val logger = LoggerFactory.getLogger(getClass)
+  logger.info(s"ApplicationTimer demo: Starting application at $start.")
 
   // When the application starts, register a stop hook with the
   // ApplicationLifecycle object. The code inside the stop hook will
@@ -33,7 +37,7 @@ class ApplicationTimer @Inject() (clock: Clock, appLifecycle: ApplicationLifecyc
   appLifecycle.addStopHook { () =>
     val stop: Instant = clock.instant
     val runningTime: Long = stop.getEpochSecond - start.getEpochSecond
-    Logger.info(s"ApplicationTimer demo: Stopping application at ${clock.instant} after ${runningTime}s.")
+    logger.info(s"ApplicationTimer demo: Stopping application at ${clock.instant} after ${runningTime}s.")
     Future.successful(())
   }
 }
