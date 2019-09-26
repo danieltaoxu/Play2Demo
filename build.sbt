@@ -24,6 +24,7 @@ lazy val `play2demo` = (project in file("."))
       guice,
       "net.sf.barcode4j" % "barcode4j" % "2.1",
       "org.slf4j" % "slf4j-api" % "1.7.25",
+      "com.typesafe.akka" %% "akka-stream" % "2.5.25",
       "org.scalatestplus.play" %% "scalatestplus-play" % "4.0.3" % Test
     )
 )

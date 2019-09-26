@@ -1,12 +1,11 @@
 package controllers
 
 import javax.inject.Inject
-
-import play.api.mvc.{AbstractController, ControllerComponents}
+import play.api.mvc.{AbstractController, Action, AnyContent, ControllerComponents}
 
 class Barcode @Inject()(cc: ControllerComponents) extends AbstractController(cc) {
   val ImageResolution = 144
-  def barcode(ean: Long) = Action {
+  def barcode(ean: Long): Action[AnyContent] = Action {
     val MimeType = "image/png"
     try {
       val imageData = esn13BarCode(ean, MimeType)
