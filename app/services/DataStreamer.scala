@@ -11,7 +11,7 @@ import akka.util.ByteString
 import scala.concurrent.duration.DurationDouble
 import scala.concurrent.{ExecutionContextExecutor, Future}
 
-object DataStreamer extends App {
+class DataStreamer {
 
   implicit val akkaSys: ActorSystem = ActorSystem("Data Streamer")
 
@@ -33,6 +33,6 @@ object DataStreamer extends App {
 
   factorials
     .zipWith(Source(0 to 100))((num, idx) => s"$idx != $num")
-      .throttle(1, 1.second)
+    .throttle(1, 1.second)
     .runForeach(println)
 }
