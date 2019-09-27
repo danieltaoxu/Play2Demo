@@ -44,7 +44,7 @@ terminal.xml
 
 
 #Maven Specific
-log/
+logs/
 target/
 mavenVersion.xml
 src/main/webapp/
