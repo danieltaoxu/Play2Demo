@@ -1,4 +1,5 @@
-2019-09-24 15:58:38,088 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-6 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2019-10-01 17:51:09,237 [WARN] from akka.util.ManifestInfo in application-akka.actor.default-dispatcher-2 - Detected possible incompatible versions on the classpath. Please note that a given Akka version MUST be the same across all modules of Akka that you are using, e.g. if you use [2.5.25] all other modules that are released together MUST be of the same version. Make sure you're using a compatible set of libraries. Possibly conflicting versions [2.5.25, 2.5.23] in libraries [akka-actor:2.5.25, akka-slf4j:2.5.23, akka-protobuf:2.5.25, akka-stream:2.5.25]
+2019-10-01 17:51:09,459 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-2 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
@@ -6,5 +7,4 @@
     filters.ExampleFilter
     filters.ExampleFilter
 
-2019-09-24 15:58:38,094 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-6 - Application started (Dev) (no global state)
-2019-09-24 16:00:37,381 [INFO] from play.core.server.AkkaHttpServer in play-dev-mode-shutdown-hook-1 - Stopping server...
+2019-10-01 17:51:09,465 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-2 - Application started (Dev) (no global state)

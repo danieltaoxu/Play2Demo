@@ -26,7 +26,7 @@ class Products @Inject()(cc: ControllerComponents, langs: Langs) extends Abstrac
 
   def save: Action[AnyContent] = Action { implicit request =>
     val messages: Messages = messagesApi.preferred(request)
-    val newProductForm = productForm.bindFromRequest()
+    val newProductForm: Form[Product] = productForm.bindFromRequest()
     newProductForm.fold(
       hasErrors = { form =>
         Redirect(routes.Products.newProduct)
@@ -65,4 +65,6 @@ class Products @Inject()(cc: ControllerComponents, langs: Langs) extends Abstrac
       "description" -> nonEmptyText
     )(Product.apply)(Product.unapply)
   )
+
+   // def editProduct
 }

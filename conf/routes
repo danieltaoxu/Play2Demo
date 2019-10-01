@@ -5,7 +5,8 @@
 
 # An example controller showing a sample home page
 GET      /                           controllers.Application.index
-GET      /hello                      controllers.Application.hello(name: String)
+GET      /foo/bar/hello              controllers.Application.helloView
+GET      /hello/:name                controllers.Application.hello(name)
 GET      /products                   controllers.Products.list
 GET      /products/createProduct     controllers.Products.newProduct
 POST     /products                   controllers.Products.save

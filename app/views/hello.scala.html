@@ -1,9 +1,6 @@
-@(name: String)(implicit messages: MessagesProvider, flash: Flash)
+@(name: String)(implicit messages: RequestHeader)
 
-@main("Hello") {
-    <section id="top">
-        <div class="wrapper">
-            <h1>Hello @name</h1>
-        </div>
-    </section>
-}
+<h1>Hello @name</h1>
+
+<a href="@routes.Application.hello(name)">Absolute Link</a>
+<a href="@routes.Application.hello(name).relative">Relative Link</a>
