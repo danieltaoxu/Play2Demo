@@ -13,6 +13,7 @@ POST     /products                   controllers.Products.save
 GET      /products/$esn<\d{13}>      controllers.Products.show(esn: Long)
 GET      /barcode/:esn               controllers.Barcode.barcode(esn: Long)
 GET      /products/:s                controllers.Products.justJson(s: String)
+GET      /gohello                    controllers.Application.goToHello
 #GET     /                           controllers.HomeController.index
 # An example controller showing how to use dependency injection
 #GET     /count                      controllers.CountController.count

@@ -3,7 +3,7 @@ package controllers
 import javax.inject.Inject
 import org.slf4j.LoggerFactory
 import play.api.i18n.{Lang, Langs, Messages}
-import play.api.mvc.{AbstractController, Action, AnyContent, ControllerComponents, Cookie}
+import play.api.mvc.{AbstractController, Action, AnyContent, Codec, ControllerComponents, Cookie}
 
 class Application @Inject()(cc: ControllerComponents, langs: Langs) extends AbstractController(cc) with play.api.i18n.I18nSupport {
   val lang: Lang = langs.availables.head
@@ -11,6 +11,11 @@ class Application @Inject()(cc: ControllerComponents, langs: Langs) extends Abst
   val logger = LoggerFactory.getLogger(getClass)
 
   def index: Action[AnyContent] = Action { implicit request =>
+    request.session
+      .get("connected")
+      .map { user =>
+
+      }
     val messages: Messages = messagesApi.preferred(request)
     val message: String = messages("application.name")
     // Redirect(routes.Products.list)
@@ -27,5 +32,11 @@ class Application @Inject()(cc: ControllerComponents, langs: Langs) extends Abst
   def helloView() = Action { implicit request =>
     println(s"$request \n ${request.cookies} \n ${request.cookies.get("PLAY_SESSION")}")
     Ok(views.html.hello("Bob"))
+  }
+
+  implicit val myCustomCharset = Codec.javaSupported("iso-8859-1")
+
+  def goToHello: Action[AnyContent] = Action {
+    Ok(<h1>Hello World!</h1>).as(HTML)
   }
 }
